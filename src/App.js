@@ -143,14 +143,16 @@ class App extends Component{
                   <Grid item xs={5}>
                     
                   </Grid>
+                  
+                  
                   <Grid  item xs={1}>
-                      <AddCircle onClick={(event)=>this.onAction("roomsAddAction")} color={this.state.roomCount>=5?"disabled":"primary"}/>
+                      <RemoveCircle onClick={(event)=>this.onAction("roomsSubAction")} color={this.state.roomCount<=1?"disabled":"primary"}/>
                   </Grid>
                   <Grid item xs={1}>
                     {this.state.roomCount}
-                  </Grid>  
+                  </Grid> 
                   <Grid  item xs={1}>
-                      <RemoveCircle onClick={(event)=>this.onAction("roomsSubAction")} color={this.state.roomCount<=1?"disabled":"primary"}/>
+                      <AddCircle onClick={(event)=>this.onAction("roomsAddAction")} color={this.state.roomCount>=5?"disabled":"primary"}/>
                   </Grid>
                    
                   <Grid item xs={4} style={{color: "blue"}}>
@@ -160,15 +162,17 @@ class App extends Component{
                   <Grid item xs={5}>
                     
                   </Grid>
-                  <Grid  item xs={1}>
-                      <AddCircle onClick={(event)=>this.onAction("adultsAddAction")} color={(this.state.adultCount+this.state.childCount)>=20?"disabled":"primary"} />
-                  </Grid>
-                  <Grid item xs={1}>
-                    {this.state.adultCount}
-                  </Grid>  
+                  
                   <Grid  item xs={1}>
                       <RemoveCircle onClick={(event)=>this.onAction("adultsSubAction")} color={adultsubdisabled?"disabled":"primary"}/>
                   </Grid>
+                  <Grid item xs={1}>
+                    {this.state.adultCount}
+                  </Grid> 
+                  <Grid  item xs={1}>
+                      <AddCircle onClick={(event)=>this.onAction("adultsAddAction")} color={(this.state.adultCount+this.state.childCount)>=20?"disabled":"primary"} />
+                  </Grid>
+                   
 
 
                   <Grid item xs={4} style={{color: "blue"}}>
@@ -178,14 +182,16 @@ class App extends Component{
                   <Grid item xs={5}>
                     
                   </Grid>
+                 
                   <Grid  item xs={1}>
-                      <AddCircle onClick={(event)=>this.onAction("childsAddAction")} color={childadddisabled?"disabled":"primary"}/>
+                      <RemoveCircle onClick={(event)=>this.onAction("childsSubAction")} color={childsubdisabled?"disabled":"primary"}/>
                   </Grid>
+                  
                   <Grid item xs={1}>
                     {this.state.childCount}
                   </Grid>  
                   <Grid  item xs={1}>
-                      <RemoveCircle onClick={(event)=>this.onAction("childsSubAction")} color={childsubdisabled?"disabled":"primary"}/>
+                      <AddCircle onClick={(event)=>this.onAction("childsAddAction")} color={childadddisabled?"disabled":"primary"}/>
                   </Grid>
               </Grid>
                 
